@@ -5,7 +5,7 @@ Website resmi untuk Laboratory Internet of Things (IoT) Universitas Brawijaya. P
 ## ✨ Fitur Utama
 
 ### 🏠 Website Utama
-- **Home** - Halaman utama dengan informasi terkini
+- **Home** - Halaman utama dengan informasi Workshop IoT Universitas Brawijaya
 - **About Us** - Profil dan informasi tentang Lab IoT UB
 - **Visi & Misi** - Visi dan misi laboratorium
 - **Struktur Organisasi** - Struktur kepengurusan lab
