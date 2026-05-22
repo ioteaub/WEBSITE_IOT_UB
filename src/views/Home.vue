@@ -106,10 +106,17 @@ export default defineComponent({
     console.log(this.isLoaded);
   },
   watch: {
-    todos(newVal) {
-      // If Firestore collection is empty, hide spinner immediately
-      if (newVal && newVal.length === 0) {
-        this.isLoaded = true
+    todos: {
+      immediate: true, // Jalankan langsung saat komponen mount, termasuk saat Firebase tidak bisa diakses
+      handler(newVal) {
+        if (newVal && newVal.length === 0) {
+          // Beri waktu 2 detik untuk Firebase mencoba load, kalau tetap kosong → tampilkan halaman
+          setTimeout(() => {
+            if (!this.isLoaded && this.todos.length === 0) {
+              this.isLoaded = true
+            }
+          }, 2000)
+        }
       }
     }
   },
@@ -117,13 +124,13 @@ export default defineComponent({
       window.onresize = () => {
           this.windowWidth = window.innerWidth
       }
-      // Failsafe: hide spinner after 5 seconds even if images fail to load
+      // Failsafe: hide spinner after 3 detik walau gambar/Firebase gagal load
       setTimeout(() => {
         if (!this.isLoaded) {
           console.warn('Loading timeout - hiding spinner')
           this.isLoaded = true
         }
-      }, 5000)
+      }, 3000)
   },
   methods: {
     getUrl(w){
