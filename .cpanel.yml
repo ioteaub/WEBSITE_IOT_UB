@@ -1,4 +1,0 @@
----
-deployment:
-  tasks:
-    - /bin/cp -rf dist/. .
