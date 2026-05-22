@@ -13,7 +13,7 @@
     <div class="absolute w-screen h-screen">
       <Carousel :wrap-around="true" :breakpoints="breakpoints" :transition="500" :autoplay="5000">
         <Slide v-for="todo in todos" :key="todo.id" >
-          <img :src="getUrl(todo.id)" @load="onImgLoad" alt="Carousel Slide" class="carousel__item brightness-[0.65] w-screen h-screen object-cover object-top opacity-70" />
+          <img :src="getUrl(todo.id)" @load="onImgLoad" @error="onImgLoad" alt="Carousel Slide" class="carousel__item brightness-[0.65] w-screen h-screen object-cover object-top opacity-70" />
         </Slide>  
         <template #addons>
         </template>
@@ -105,10 +105,25 @@ export default defineComponent({
   updated(){
     console.log(this.isLoaded);
   },
+  watch: {
+    todos(newVal) {
+      // If Firestore collection is empty, hide spinner immediately
+      if (newVal && newVal.length === 0) {
+        this.isLoaded = true
+      }
+    }
+  },
   mounted() {
       window.onresize = () => {
           this.windowWidth = window.innerWidth
-      } 
+      }
+      // Failsafe: hide spinner after 5 seconds even if images fail to load
+      setTimeout(() => {
+        if (!this.isLoaded) {
+          console.warn('Loading timeout - hiding spinner')
+          this.isLoaded = true
+        }
+      }, 5000)
   },
   methods: {
     getUrl(w){

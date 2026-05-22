@@ -3,7 +3,7 @@
     <div class="flex z-50 w-screen h-16 bg-component-bar-laboratory fixed">
       <div class=" w-2/3 flex">
         <div class=" px-5">
-          <svg width="50" height="" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <svg width="50" height="auto" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <rect width="700" height="700" fill="url(#pattern0)"/>
             <defs>
             <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">

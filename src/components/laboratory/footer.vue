@@ -6,7 +6,7 @@
     <div class="w-full flex justify-between">
       <div class=" pl-2 md:pl-10 flex items-center">
         <div class="">
-          <svg :width="windowWidth <= 767 ? '60' : '140'" height="" viewBox="0 0 1024 995" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <svg :width="windowWidth <= 767 ? '60' : '140'" height="auto" viewBox="0 0 1024 995" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <rect width="1024" height="995" fill="url(#pattern0)"/>
             <defs>
               <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">

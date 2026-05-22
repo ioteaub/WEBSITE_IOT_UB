@@ -4,7 +4,7 @@
       <div class=" px-5 flex justify-center items-center">
         
         <img src="./LogoUB.png" alt="laboratorium iot ub" class=" hidden lg:inline items-center justify-center mr-3" style="width: 3.25rem; height: 3.25rem">
-        <svg width="50" height="" viewBox="0 0 89 89" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <svg width="50" height="auto" viewBox="0 0 89 89" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <rect width="89" height="89" fill="url(#pattern0)"/>
           <defs>
             <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
